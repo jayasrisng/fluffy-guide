@@ -34,7 +34,7 @@ the lecturer is treated as not the user so interaction remains silent and separa
 clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/fluffy-guide.git
+git clone https://github.com/jayasrisng/fluffy-guide.git
 cd fluffy-guide
 ````
 
