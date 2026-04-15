@@ -1,0 +1,12 @@
+{"speaker":"lecturer","text":"Today we compare supervised and unsupervised learning with practical examples."}
+{"speaker":"lecturer","text":"Supervised learning uses labeled data, where each input has a known target output."}
+{"speaker":"lecturer","text":"A common supervised task is email spam classification using historical labeled emails."}
+{"speaker":"lecturer","text":"Unsupervised learning has no labels and focuses on structure, such as clustering customers by behavior."}
+{"speaker":"lecturer","text":"K-means is a classic clustering algorithm that partitions data into k groups."}
+{"speaker":"lecturer","text":"Model evaluation differs: supervised models use metrics like accuracy and F1, while clustering uses silhouette score."}
+{"speaker":"lecturer","text":"Feature scaling is important for distance-based methods because large-scale features dominate Euclidean distance."}
+{"speaker":"lecturer","text":"In practice, teams often start with simple baselines before trying larger neural models."}
+{"speaker":"lecturer","text":"A baseline gives you a reference point and prevents overestimating complicated models."}
+{"speaker":"lecturer","text":"We also discussed data leakage, where test information accidentally influences training."}
+{"speaker":"lecturer","text":"Leakage can produce unrealistically high results that fail in production."}
+{"speaker":"lecturer","text":"Always split train and test data before heavy preprocessing and feature selection."}

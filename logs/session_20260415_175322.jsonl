@@ -1,0 +1,1 @@
+{"timestamp": "2026-04-15T22:53:22.422367+00:00", "event_type": "live_settings", "mode": "demo", "input_device_name": "MacBook Air Microphone (idx 0)", "input_device_index": 0, "sample_rate": 16000, "mic_mode": "voice", "chunk_seconds": 3.0, "energy_threshold": 0.003, "confidence_threshold": -1.1}

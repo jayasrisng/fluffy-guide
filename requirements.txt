@@ -1,0 +1,7 @@
+streamlit>=1.35.0
+faster-whisper>=1.0.3
+openai>=1.40.0
+python-dotenv>=1.0.1
+sounddevice>=0.4.7
+soundfile>=0.12.1
+numpy>=1.26.0
