@@ -1,116 +1,139 @@
 # fluffy-guide
 
-real-time multimodal ai copilot for live learning
+**A real-time multimodal AI copilot for live learning.**
 
-fluffy-guide is a lightweight research prototype that continuously listens to a lecture and helps you understand it in the moment without interrupting the speaker.
+fluffy-guide is a lightweight research prototype that listens to lecture audio, maintains a rolling transcript and summary, and lets a learner ask quiet questions without interrupting the speaker.
 
-## what it does
+The project explores real-time understanding: helping someone keep up while a lecture is happening, instead of only summarizing after the fact.
 
-- captures lecture audio in real time or demo mode  
-- generates a rolling transcript  
-- maintains a short evolving summary of recent context  
-- lets you ask questions silently using text or voice  
-- answers using only what was just said  
+## What it does
 
-## how it works
+- Captures lecture audio in real time or demo mode.
+- Generates a rolling transcript.
+- Maintains a short evolving summary of recent context.
+- Lets the learner ask questions silently with text or voice.
+- Answers using recent lecture context instead of unrelated general knowledge.
 
-fluffy-guide uses a two agent system
+## How it works
 
-listener agent  
-- captures audio  
-- transcribes speech  
-- maintains a rolling context buffer  
-- updates a short summary  
+fluffy-guide uses a two-agent structure:
 
-guide agent  
-- takes user questions  
-- uses recent transcript and summary  
-- returns concise grounded answers  
+```mermaid
+flowchart LR
+    A["Lecture audio"] --> B["Listener agent"]
+    B --> C["Rolling transcript"]
+    B --> D["Short context summary"]
+    E["Learner question"] --> F["Guide agent"]
+    C --> F
+    D --> F
+    F --> G["Grounded answer"]
+```
 
-the lecturer is treated as not the user so interaction remains silent and separate
+### Listener agent
 
-## setup
+- Captures audio.
+- Transcribes speech.
+- Maintains a rolling context buffer.
+- Updates a short summary.
 
-clone the repository
+### Guide agent
+
+- Takes learner questions.
+- Uses the recent transcript and summary.
+- Returns concise grounded answers.
+
+The lecturer is treated as separate from the learner so interaction remains silent and non-disruptive.
+
+## Setup
+
+Clone the repository:
 
 ```bash
 git clone https://github.com/jayasrisng/fluffy-guide.git
 cd fluffy-guide
-````
+```
 
-create and activate a virtual environment
+Create and activate a virtual environment:
 
 ```bash
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-install dependencies
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-create a .env file and add your api key
+Create a `.env` file:
 
 ```bash
 OPENAI_API_KEY=your_api_key_here
 ```
 
-run the app
+Run the app:
 
 ```bash
 python -m streamlit run app.py
 ```
 
-## usage
+## Usage
 
-demo mode
+### Demo mode
 
-* enable demo mode
-* start agents
-* transcript and summary will simulate a lecture
+- Enable demo mode.
+- Start agents.
+- Transcript and summary simulate a lecture.
 
-live mode
+### Live mode
 
-* disable demo mode
-* select microphone
-* play lecture audio near your laptop
+- Disable demo mode.
+- Select microphone.
+- Play lecture audio near the laptop.
 
-## asking questions
+## Example questions
 
-you can ask using text or voice input
+```text
+summarize the last 30 seconds
+give me another example
+what does that mean simply
+what did the speaker say about the main tradeoff?
+```
 
-examples
+## Research direction
 
-* summarize the last 30 seconds
-* give me another example
-* what does that mean simply
+This project explores:
 
-## notes
+- real-time understanding instead of post-hoc summarization;
+- continuous multimodal context;
+- silent human-AI interaction;
+- multi-agent learning support;
+- future extensions into XR gaze and spatial interfaces.
 
-* demo mode is the most reliable for presentations
-* live mode depends on microphone quality and environment
-* separating lecture audio and user input improves accuracy
+## Tech stack
 
-## research direction
+- Python
+- Streamlit
+- faster-whisper
+- OpenAI API
 
-this project explores
+## Case study
 
-* real time understanding instead of post hoc learning
-* continuous multimodal context
-* silent human ai interaction
-* multi agent system design
+See [docs/case-study.md](docs/case-study.md) for product and implementation notes.
 
-can be extended to xr gaze interaction and spatial interfaces
+## Current limitations
 
-## stack
+- Demo mode is the most reliable for presentations.
+- Live mode depends heavily on microphone quality and room noise.
+- Transcription errors can affect downstream answers.
+- The app should not be used to record private lectures or meetings without consent.
+- API keys and transcripts should be handled as sensitive data.
 
-* python
-* streamlit
-* faster whisper
-* openai api
+## Future work
 
-## author
-
-Jayasri Guthula
+- Add transcript export controls.
+- Add consent and privacy prompts for live capture.
+- Add better source quoting from recent transcript snippets.
+- Add support for lecture slides or visual context.
+- Explore XR/spatial interfaces for silent question input.
