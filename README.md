@@ -6,6 +6,8 @@ fluffy-guide is a lightweight research prototype that listens to lecture audio, 
 
 The project explores real-time understanding: helping someone keep up while a lecture is happening, instead of only summarizing after the fact.
 
+![fluffy-guide live learning loop](media/live-learning-loop.svg)
+
 ## What it does
 
 - Captures lecture audio in real time or demo mode.
